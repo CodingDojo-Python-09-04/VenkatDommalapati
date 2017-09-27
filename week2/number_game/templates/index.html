@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>number game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<h1>Numbner Game</h1>
+	<p>Guess a number between 1 and 100 ({{session['targer']}})</p>
+	<form action="/guess" method="post">
+		<input type="number" name="guess">
+		<input type="submit" name="Guesss">
+	</form>
+	{{ session['result'] }}
+	{% if session['result'] == 'low' %}
+	<h1>you are low</h1>
+	{% elif session['result'] == 'high' %}
+	<h1>you are high</h1>
+	{% elif session['result'] == 'correct' %}
+	<h1>That is correct</h1>
+	<a href="/reset"><button>Play Again</button></a>
+	{% endif %}
+</body>
+</html>
