@@ -1,0 +1,12 @@
+.error{
+  color: gray;
+  font-weight: bold;
+}
+.success{
+  color: blue;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+input {
+  display: block;
+}
